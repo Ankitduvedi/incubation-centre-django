@@ -1,0 +1,92 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block meta %}
+    {% endblock %}
+    <title>{% block title %}Incubation Centre{% endblock %}</title>
+    <link rel="stylesheet" href={% static 'base/styles/global.css' %} />
+    <link rel="stylesheet" href={% static 'base/styles/header.css' %} />
+    <link rel="stylesheet" href={% static 'base/styles/footer.css' %} />
+    {% block styles %}
+    {% endblock %}
+    <script src="https://kit.fontawesome.com/7cdd666234.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/7cdd666234.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="nav">
+        <div class="logo">
+         <a href="https://www.ietlucknow.ac.in/"><img src={% static 'images/1.png' %} alt="Logo Image" href></a>
+        </div>
+        <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Program</a></li>
+            <li><a href="/mentors">Mentors</a></li>
+            <li><a href="/teams">Teams</a></li>
+            <li><a href="/startups">Startup</a></li>
+            <li><a href="/gallery">Gallery</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    {% block body %}
+    {% endblock %}
+
+    <footer>
+        <div class="content">
+            <div class="left box">
+                <div class="upper">
+                    <div class="topic">About us</div>
+                    <p>{{ meta.about }}</p>
+                </div>
+                <div class="lower">
+                    <div class="topic">Contact us</div>
+                    <div class="phone">
+                        <a href="#"><i class="fas fa-phone-volume"></i>{{ meta.phone }}</a>
+                    </div>
+                    <div class="email">
+                        <a href="#"><i class="fas fa-envelope"></i>{{ meta.email }}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="middle box">
+                <div class="topic">Our Services</div>
+                <div><a href="#">Mentoring Support</a></div>
+                <div><a href="#">Networking/Marketing Support</a></div>
+                <div><a href="#">Access to Govt. Grants</a></div>
+                <div><a href="#">Investors Connect</a></div>
+                <div><a href="#">Talented Intern</a></div>
+                <div><a href="#">Access to Lab Facility</a></div>
+            </div>
+            <div class="right box">
+                <div class="topic">Subscribe us</div>
+                <form action="#">
+                    <input type="text" placeholder="Enter email address">
+                    <input type="submit" name="" value="Send">
+                    <div class="media-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/NNF_IET?t=kUAhNUqL-NllkSKTLLx1YA&s=08"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.linkedin.com/in/navyug-navachar-foundation-iet-lucknow-164610260"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <script src={% static 'base/scripts/hamburger.js' %}></script>
+    {% block scripts %}
+    {% endblock %}
+</body>
+</html>

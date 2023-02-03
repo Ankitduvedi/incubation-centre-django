@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Startups{% endblock %}
+
+{%block styles %}
+    <link rel="stylesheet" href="{% static 'incubation_app/styles/startup.css' %}" />
+    <link rel="stylesheet" href={% static 'base/styles/global.css' %} />
+{% endblock %}
+
+{% block body %}
+<div class="startup">Startups
+  <div class="line1"></div>
+</div>
+<div class="line2"></div>
+<div class="container">
+    <ul class="cards">
+        {% for startup in startups %}
+        <li class="card">
+            <div>
+              <div class="row">
+                <div class="column"> <img class="icon" src="{% static startup.logo.url %}" alt=""> </div>
+                <div class="column">
+                  <h3 class="card-title">
+                    <b>
+                        {{ startup.founder }}
+                    </b>
+                  </h3>
+                  <br>
+                  <p class="card-sub">{{ startup.sector }}</p>
+                </div>
+              </div>
+              <div class="card-content">
+                <p>{{ startup.description|default:"No Description" }}</p>
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="{{ startup.website }}" class="wp-block-button__link has-base-color has-text-color has-text-align-center wp-element-button card-link">Website</a>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+  </div>
+{% endblock %}

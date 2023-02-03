@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Gallery{% endblock %}
+
+{%block styles %}
+    <link rel="stylesheet" href="{% static 'incubation_app/styles/gallery.css' %}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+{% endblock %}
+
+{% block body %}
+<div class="heading text">
+    <p>Navyug Navachar Foundation</p>
+</div>
+<div class="wrapper">
+    <div class="images">
+      {% for image in gallery %}
+       <img src="{% static image.image.url %}" alt="{{ image.program }}">
+      {% endfor %}
+    </div>
+    <div class="text">
+      <p>Gallery</p>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'incubation_app/scripts/gallery.js' %}"></script>
+{% endblock %}
