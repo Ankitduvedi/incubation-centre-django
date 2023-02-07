@@ -113,6 +113,7 @@
     font-family: 'PT Sans', sans-serif;
     margin: 3% 8%;
     color: black;
+    margin-bottom: 5%;
 }
 
 .webiste-body ul{
@@ -296,6 +297,7 @@ background: linear-gradient(to right, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, F
 .objectives{
     height: 85vh;
     background-color: #f9f3f3;
+    padding: 5%;
 }
 
 /* team css */
