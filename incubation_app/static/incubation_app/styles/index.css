@@ -93,7 +93,7 @@
 
 .website {
     background-color: #f9f3f3;
-    height: 50vh;
+    height: 70vh;
     padding: 5%;
 }
 
@@ -120,7 +120,10 @@
     color: black;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1200px) {
+    .website{
+        height: 80vh;
+    }
     .website-Heading {
         font-weight: 600;
         font-size: 25px;
@@ -287,8 +290,27 @@ background: linear-gradient(to right, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, F
 }
 
 @media screen and (max-width: 800px) {
-    .startups-Heading {
-        font-size: 35px;
+    .startups{
+        margin-bottom: 10vh;
+    }
+
+    .startups-Heading  {
+        font-size: 30px;
+        margin-bottom: 10vh;
+    }
+    .btn{
+        right: 0;
+        width: 120px;
+        height: 40px;
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+    .btn span{
+        width: 40px;
+       height: 40px; 
+    }
+    .slide{
+        margin-bottom: 10vh;
     }
 }
 
