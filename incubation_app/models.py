@@ -101,6 +101,7 @@ class Service(models.Model):
 
 class Notices(models.Model):
     update = models.CharField(max_length=100)
+    date = date = models.DateField()
     description = models.TextField()
 
     def __str__(self):
