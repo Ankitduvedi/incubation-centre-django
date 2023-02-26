@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 
+
 class StartUp(models.Model):
     name = models.CharField(max_length=100)
     founder = models.CharField(max_length=100)
@@ -29,7 +30,7 @@ class Team(models.Model):
     facebook = models.URLField(blank=True)
     twitter = models.URLField(blank=True)
     linkedin = models.URLField(blank=True)
-    
+
     @property
     def full_name(self):
         return self.first_name + ' ' + self.last_name
@@ -74,9 +75,11 @@ class Stage(models.Model):
     def __str__(self):
         return self.name
 
+
 class Gallery(models.Model):
     program = models.CharField(max_length=100)
     image = models.ImageField(upload_to='uploads/gallery')
+
 
 class Meta(models.Model):
     vision = models.TextField()
@@ -87,8 +90,18 @@ class Meta(models.Model):
     phone = models.CharField(max_length=15)
     email = models.EmailField()
 
+
 class Objective(models.Model):
     objective = models.TextField()
 
+
 class Service(models.Model):
     service = models.TextField()
+
+
+class Notices(models.Model):
+    update = models.CharField(max_length=100)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.update

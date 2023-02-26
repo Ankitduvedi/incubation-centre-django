@@ -16,6 +16,7 @@
     }
 }
 
+
 /* apply section */
 
 .apply {
@@ -37,10 +38,12 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-.bg-text h1{
+
+.bg-text h1 {
     font-weight: bold;
     margin-bottom: 2%;
 }
+
 .bg-text {
     /* Fallback color */
     background-color: rgba(0, 0, 0, 0.4);
@@ -70,9 +73,8 @@
 
 #increment-btn {
     border-radius: 14px;
-    background: #757F9A;  /* fallback for old browsers */
-   
-    
+    background: #757F9A;
+    /* fallback for old browsers */
 }
 
 #increment-btn:hover {
@@ -86,6 +88,41 @@
         font-Size: 20px;
         width: 30%;
     }
+}
+
+
+/* update */
+
+.carousel {
+    display: flex;
+    gap: 10px;
+    width: 580px;
+    max-width: 90%;
+    margin: 50px auto;
+    padding: 10px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+
+.carousel-item {
+    flex: 1 0 250px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px 1px #ccc;
+    color: #0f0f0f;
+    scroll-snap-align: start;
+    scroll-margin: 5px;
+}
+
+.title {
+    max-width: 170px;
+    margin: 0 0 25px;
+    font-weight: 900;
+    color: #000;
+}
+
+.carousel-item p {
+    color: #000;
 }
 
 
@@ -116,12 +153,12 @@
     margin-bottom: 5%;
 }
 
-.webiste-body ul{
+.webiste-body ul {
     color: black;
 }
 
 @media screen and (max-width: 1200px) {
-    .website{
+    .website {
         height: 80vh;
     }
     .website-Heading {
@@ -133,7 +170,8 @@
         margin-left: 15%;
     }
 }
- 
+
+
 /* startups css */
 
 .startups {
@@ -159,10 +197,12 @@
     height: 60px;
     display: grid;
     place-items: center;
-    background: #EB3349;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #F45C43, #EB3349);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background: #EB3349;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F45C43, #EB3349);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F45C43, #EB3349);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: #fff;
     border-radius: 80px;
     font-size: 1.5rem;
@@ -173,13 +213,15 @@ background: linear-gradient(to right, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, F
     border-left: 2px solid #e6e6fa;
     padding-left: 60px;
     transition: 0.5s ease-in-out;
-  }
-  .btn:hover {
+}
+
+.btn:hover {
     padding-left: 0;
     padding-right: 60px;
     color: #fff;
-  }
-  .btn span {
+}
+
+.btn span {
     position: absolute;
     display: grid;
     place-items: center;
@@ -192,11 +234,13 @@ background: linear-gradient(to right, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, F
     font-size: 1.5rem;
     font-weight: 900;
     transition: 0.5s cubic-bezier(0.4, 0, 1, 1);
-  }
-  .btn:hover span {
+}
+
+.btn:hover span {
     left: calc(100% - 76px);
-  }
-  .btn::after {
+}
+
+.btn::after {
     position: absolute;
     content: "";
     width: 80px;
@@ -205,10 +249,11 @@ background: linear-gradient(to right, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, F
     background: rgba(255, 255, 255, 0.5);
     transform: translateX(-175px) skew(25deg);
     transition: 0.75s ease-in-out;
-  }
-  .btn:hover::after {
+}
+
+.btn:hover::after {
     transform: translateX(175px) skew(25deg);
-  }
+}
 
 .slider {
     background: white;
@@ -221,7 +266,7 @@ background: linear-gradient(to right, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, F
     margin-bottom: 5%;
 }
 
-.slide img{
+.slide img {
     width: 55%;
     aspect-ratio: 3/2;
     object-fit: contain;
@@ -290,37 +335,38 @@ background: linear-gradient(to right, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, F
 }
 
 @media screen and (max-width: 800px) {
-    .startups{
+    .startups {
         margin-bottom: 10vh;
     }
-
-    .startups-Heading  {
+    .startups-Heading {
         font-size: 30px;
         margin-bottom: 10vh;
     }
-    .btn{
+    .btn {
         right: 0;
         width: 120px;
         height: 40px;
         font-size: 1.2rem;
         font-weight: 500;
     }
-    .btn span{
+    .btn span {
         width: 40px;
-       height: 40px; 
+        height: 40px;
     }
-    .slide{
+    .slide {
         margin-bottom: 10vh;
     }
 }
 
+
 /* objective */
 
-.objectives{
+.objectives {
     height: 85vh;
     background-color: #f9f3f3;
     padding: 5%;
 }
+
 
 /* team css */
 
