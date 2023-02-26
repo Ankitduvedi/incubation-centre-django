@@ -23,6 +23,7 @@
   {% for notice in notices %}
   <div class="carousel-item">
     <h2 class="title">{{ notice.update}}</h2>
+    <p>{{notice.date}}</p>
     <p class="discription">{{notice.description|default:"No discription"}}</p>
   </div>
   {% endfor %}
