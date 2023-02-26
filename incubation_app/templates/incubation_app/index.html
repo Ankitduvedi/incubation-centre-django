@@ -1,79 +1,111 @@
-{% extends "base.html" %}
-{% load static %}
-
-{% block title %}Home{% endblock %}
-
+{% extends "base.html" %} {% load static %} {% block title %}Home{% endblock %}
 {%block styles %}
-    <link rel="stylesheet" href="{% static 'incubation_app/styles/index.css' %}" />
-    <link rel="stylesheet" href={% static 'base/styles/global.css' %} />
-{% endblock %}
+<link rel="stylesheet" href="{% static 'incubation_app/styles/index.css' %}" />
+<link rel="stylesheet" href={% static 'base/styles/global.css' %} />
+{%endblock%} {% block body %}
+<div class="apply">
+  <div class="bg-image"></div>
 
-{% block body %}
-    <div class="apply">
-        <div class="bg-image"></div>
+  <div class="bg-text">
+    <h1>VISION</h1>
+    <h2>{{ meta.vision }}</h2>
+    <a
+      href="https://docs.google.com/forms/d/e/1FAIpQLSf637ExGQNqN9WB_QKnvyP7Rj2xX5VEdWH1-jFIA_rRdVYcKw/viewform"
+      ><button id="increment-btn">APPLY</button></a
+    >
+  </div>
+</div>
 
-        <div class="bg-text">
-            <h1>VISION</h1>
-            <h2>{{ meta.vision }}</h2>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf637ExGQNqN9WB_QKnvyP7Rj2xX5VEdWH1-jFIA_rRdVYcKw/viewform"><button id="increment-btn">APPLY</button></a>
-        </div>
+<!-- update -->
+
+<div class="website-Heading">Important Updates</div>
+<div class="carousel">
+  {% for notice in notices %}
+  <div class="carousel-item">
+    <h2 class="title">{{ notice.update}}</h2>
+    <p class="discription">{{notice.description|default:"No discription"}}</p>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- website -->
+
+<div class="website">
+  <div class="website-Heading">Navyug Navachar Foundation</div>
+  <div class="webiste-body">{{ meta.description }}</div>
+</div>
+
+<!-- startups -->
+
+<div class="startups">
+  <div class="startups-Heading">
+    Startups
+    <a href="/startups" class="btn">
+      View All
+      <span>&#8594;</span>
+    </a>
+  </div>
+  <div class="slider">
+    <div class="slide-track">
+      {% for startup in startups %}
+      <div class="slide">
+        <img
+          src="{% static startup.logo.url %}"
+          alt="{{startup.name}}"
+          height="100"
+          width="250"
+        />
+      </div>
+      {% endfor %}
     </div>
+  </div>
+</div>
 
-    <!-- website -->
+<!-- objective -->
 
-    <div class="website">
-        <div class="website-Heading">Navyug Navachar Foundation</div>
-        <div class="webiste-body">{{ meta.description }}</div>
-        </div>
-  
-    <!-- startups -->
-    
-    <div class="startups">
-        <div class="startups-Heading">
-            Startups
-            <a href="/startups" class="btn">
-                View All
-                <span>&#8594;</span>
-            </a>
-        </div>
-        <div class="slider">
-            <div class="slide-track">
-                {% for startup in startups %}
-                <div class="slide">
-                    <img src="{% static startup.logo.url %}" alt="{{startup.name}}" height="100" width="250" />
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-    
-    <!-- objective -->
+<div class="objectives">
+  <div class="website-Heading">Objectives</div>
+  <div class="webiste-body">
+    <ul>
+      <li>
+        To facilitate the incubation of new enterprises with innovative
+        technologies by admitting them to the incubation centre.
+      </li>
+      <li>
+        To provide physical, technical, financial and networking support and
+        services.
+      </li>
+      <li>
+        To provide incubation, acceleration, capital, and insights to help
+        entrepreneurs make a tremendous impact.
+      </li>
+      <li>
+        Building and sharing assets, including infrastructure, access to
+        business support services, mentoring, and training programs to enhance
+        the skills of entrepreneurs and seed funds.
+      </li>
+    </ul>
+  </div>
+</div>
 
-    <div class="objectives">
-        <div class="website-Heading">Objectives</div>
-        <div class="webiste-body" >
-            <ul>
-            <li>To facilitate the incubation of new enterprises with innovative technologies by admitting them to the incubation centre.</li>
-            <li>To provide physical, technical, financial and networking support and services.</li>
-            <li>To provide incubation, acceleration, capital, and insights to help entrepreneurs make a tremendous impact.</li>
-            <li>Building and sharing assets, including infrastructure, access to business support services, mentoring, and training programs to enhance the skills of entrepreneurs and seed funds.</li>
-            </ul>
-        </div>
-    </div>
+<!-- teamset -->
 
-    <!-- teamset -->
-
-    <div class="team">
-        <div class="Heading-team">
-            Team Set
-            <a href="/teams" class="btn">View All
-                <span>&#8594;</span>
-            </a>
-        </div>
-        <div class="pic-ctn">
-            {% for person in team %}
-                <img src="{% static person.image.url %}" alt="{{person.full_name}}" class="pic" />
-            {% endfor %}
-        </div>
-    </div>
+<div class="team">
+  <div class="Heading-team">
+    Team Set
+    <a href="/teams" class="btn"
+      >View All
+      <span>&#8594;</span>
+    </a>
+  </div>
+  <div class="pic-ctn">
+    {% for person in team %}
+    <img
+      src="{% static person.image.url %}"
+      alt="{{person.full_name}}"
+      class="pic"
+    />
+    {% endfor %}
+  </div>
+</div>
 {% endblock %}
