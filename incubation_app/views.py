@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from .models import StartUp, Team, Mentor, Gallery, Meta, Notices
+from django.shortcuts import render, HttpResponseRedirect
+from .models import StartUp, Team, Mentor, Gallery, Meta, Notices, Invites
+# from .form import NewInvites
 
 # Create your views here.
 
@@ -50,3 +51,24 @@ def gallery(request):
     context['notices'] = Notices.objects.all()
 
     return render(request, 'incubation_app/gallery.html', context)
+
+
+def invites(request):
+
+    if request.method == "POST":
+        e_mail = request.POST['email']
+        print(e_mail)
+        save_invite = Invites(email=e_mail)
+        save_invite.save()
+
+    return HttpResponseRedirect('/')
+    # form = NewInvites()
+
+    # if request.method == "POST":
+    #     form = NewInvites(request.POST)
+
+    #     if form.is_valid():
+    #         form.save(commit=True)
+    #         return index(request)
+    #     else:
+    #         print('ERROR FORM INVALID')

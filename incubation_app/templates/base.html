@@ -69,10 +69,12 @@
                 <div><a href="#">Access to Lab Facility</a></div>
             </div>
             <div class="right box">
-                <div class="topic">Subscribe us</div>
-                <form action="#">
-                    <input type="text" placeholder="Enter email address">
+                <div class="topic">Contact us</div>
+                <form method="POST" action="/invites">
+                    {% csrf_token %}
+                    <input type="text" name="email" placeholder="Enter email address">
                     <input type="submit" name="" value="Send">
+                </form>
                     <div class="media-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -80,7 +82,7 @@
                         <a href="#"><i class="fab fa-youtube"></i></a>
                         <a href="https://www.linkedin.com/in/navyug-navachar-foundation-iet-lucknow-164610260"><i class="fab fa-linkedin-in"></i></a>
                     </div>
-                </form>
+                
             </div>
         </div>
     </footer>
