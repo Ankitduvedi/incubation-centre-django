@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponseRedirect
-from .models import StartUp, Team, Mentor, Gallery, Meta, Notices, Invites
+from .models import StartUp, Team, Mentor, Gallery, Meta, Notices, Invites, Program
 # from .form import NewInvites
 
 # Create your views here.
@@ -62,13 +62,10 @@ def invites(request):
         save_invite.save()
 
     return HttpResponseRedirect('/')
-    # form = NewInvites()
 
-    # if request.method == "POST":
-    #     form = NewInvites(request.POST)
 
-    #     if form.is_valid():
-    #         form.save(commit=True)
-    #         return index(request)
-    #     else:
-    #         print('ERROR FORM INVALID')
+def programs(request):
+    context = {}
+    context['programs'] = Program.objects.all().order_by(
+        'date').reverse()
+    return render(request, 'incubation_app/programs.html', context)
