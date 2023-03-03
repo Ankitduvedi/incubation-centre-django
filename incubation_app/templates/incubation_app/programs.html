@@ -1,0 +1,29 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Programs</title>
+    <link rel="stylesheet" href="{% static 'incubation_app/styles/programs.css' %}" />
+</head>
+
+<body>
+<div class="program">Program</div>
+<div class="carousel">
+    {%for program in programs%}
+    <div class="carousel-item">
+        <div class="carousel-box">
+            <p class="title para-title">{{program.description}}</p>
+            <div class="title">{{program.name}}</div>
+            <div class="num">{{program.date}}</div>
+            <img src="{% static program.image.url %}" />
+        </div>
+    </div>
+    {%endfor%}
+</div>
+ <script src="{% static 'incubation_app/scripts/programs.js' %}"></script>
+</body>
+</html>

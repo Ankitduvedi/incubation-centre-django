@@ -110,3 +110,11 @@ class Notices(models.Model):
 
 class Invites(models.Model):
     email = models.EmailField()
+
+
+class Program(models.Model):
+    name = models.CharField(max_length=256)
+    description = models.CharField(max_length=256)
+    date = models.DateField()
+    image = models.ImageField(upload_to='uploads/program')
+    link = models.URLField(default='NA')

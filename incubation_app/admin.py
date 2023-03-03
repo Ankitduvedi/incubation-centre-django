@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import AreaOfInterest, Sector, Stage, StartUp, Team, Mentor, Gallery, Meta, Service, Objective, Notices, Invites
+from .models import AreaOfInterest, Sector, Stage, StartUp, Team, Mentor, Gallery, Meta, Service, Objective, Notices, Invites, Program
 
 # Register your models here.
 admin.site.register(StartUp)
@@ -14,3 +14,4 @@ admin.site.register(Service)
 admin.site.register(Objective)
 admin.site.register(Notices)
 admin.site.register(Invites)
+admin.site.register(Program)
